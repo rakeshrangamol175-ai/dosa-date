@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dosa Date 😋</title>
+  <title>Dosa Date</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -10,70 +10,78 @@
       height: 100vh;
       margin: 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
       overflow: hidden;
-      text-align: center;
-      padding: 20px;
 
-      /* Dosa background */
-      background-image: 
+      /* REAL DOSA IMAGE */
+      background-image:
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("https://images.unsplash.com/photo-1606491956689-2ea866880c84");
+        url("https://images.unsplash.com/photo-1633945274405-b6c8069047b0");
       background-size: cover;
       background-position: center;
     }
 
-    h1 {
-      font-size: 28px;
+    .card {
+      text-align: center;
       color: #fff;
-      margin-bottom: 40px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 30px;
     }
 
     .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
+      position: relative;
+      height: 80px;
     }
 
     button {
-      padding: 14px 30px;
+      padding: 14px 28px;
       font-size: 18px;
-      border-radius: 12px;
+      border-radius: 14px;
       border: none;
       cursor: pointer;
     }
 
     #yes {
       background: #ff9800;
-      color: white;
+      color: #fff;
+      margin-right: 10px;
     }
 
     #no {
-      background: #ddd;
-      position: fixed;
+      background: #f0f0f0;
+      position: absolute;
+      left: 160px; /* START POSITION */
+      top: 0;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>🥞💛 Chale kya dosa date pe? 😋✨</h1>
+  <div class="card">
+    <h1>
+      Chale kya dosa date pe? 😋✨
+    </h1>
 
-  <div class="buttons">
-    <button id="yes" onclick="yesClicked()">🧡 Chalooo 😍</button>
-    <button id="no" onclick="moveNo()" ontouchstart="moveNo()">🙅‍♀️ Nahi 🙄</button>
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">🧡 Chalooo 😍</button>
+      <button id="no" onclick="moveNo()" ontouchstart="moveNo()">🙅‍♀️ Nahi 🙄</button>
+    </div>
   </div>
 
   <script>
     function moveNo() {
       const noBtn = document.getElementById("no");
+      const parent = document.querySelector(".buttons");
 
-      const maxX = window.innerWidth - noBtn.offsetWidth;
-      const maxY = window.innerHeight - noBtn.offsetHeight;
+      const maxX = parent.offsetWidth - noBtn.offsetWidth;
+      const maxY = parent.offsetHeight - noBtn.offsetHeight;
 
       const x = Math.random() * maxX;
       const y = Math.random() * maxY;

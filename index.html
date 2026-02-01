@@ -36,11 +36,9 @@
     }
 
     .buttons {
-      position: relative;
       display: flex;
       justify-content: center;
       gap: 14px;
-      height: 70px;
     }
 
     button {
@@ -59,8 +57,7 @@
 
     #no {
       background: #f0f0f0;
-      position: absolute;
-      right: 0;
+      position: relative; /* IMPORTANT */
     }
   </style>
 </head>
@@ -79,10 +76,12 @@
   <script>
     function moveNo() {
       const noBtn = document.getElementById("no");
-      const container = document.querySelector(".buttons");
 
-      const maxX = container.clientWidth - noBtn.offsetWidth;
-      const maxY = container.clientHeight - noBtn.offsetHeight;
+      // Make it float ONLY after interaction
+      noBtn.style.position = "fixed";
+
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
 
       const x = Math.random() * maxX;
       const y = Math.random() * maxY;

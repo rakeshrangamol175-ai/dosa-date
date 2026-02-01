@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dosa Date 😋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #fff7e6;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 40px;
+    }
+
+    button {
+      padding: 14px 30px;
+      font-size: 18px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      margin: 8px;
+    }
+
+    #yes {
+      background: #ff9800;
+      color: white;
+    }
+
+    #no {
+      background: #ccc;
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🥞💛 Chale kya dosa date pe? 😋✨</h1>
+
+  <button id="yes" onclick="yesClicked()">🧡 Chalooo 😍</button>
+  <button id="no" onclick="moveNo()" ontouchstart="moveNo()">🙅‍♀️ Nahi 🙄</button>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function yesClicked() {
+      alert(
+        "😂💍 Shaadi kar lete hain!\n💸 Roz kahan paise kharch karenge?\n🏠 Sirf ek baar aata leke,\n🥞 Ghar pe bana ke kha lenge 😌❤️"
+      );
+    }
+  </script>
+
+</body>
+</html>

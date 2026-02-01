@@ -13,16 +13,30 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #fff7e6;
       font-family: Arial, sans-serif;
       overflow: hidden;
       text-align: center;
       padding: 20px;
+
+      /* Dosa background */
+      background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("https://images.unsplash.com/photo-1606491956689-2ea866880c84");
+      background-size: cover;
+      background-position: center;
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 28px;
+      color: #fff;
       margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     button {
@@ -31,7 +45,6 @@
       border-radius: 12px;
       border: none;
       cursor: pointer;
-      margin: 8px;
     }
 
     #yes {
@@ -40,7 +53,7 @@
     }
 
     #no {
-      background: #ccc;
+      background: #ddd;
       position: fixed;
     }
   </style>
@@ -50,8 +63,10 @@
 
   <h1>🥞💛 Chale kya dosa date pe? 😋✨</h1>
 
-  <button id="yes" onclick="yesClicked()">🧡 Chalooo 😍</button>
-  <button id="no" onclick="moveNo()" ontouchstart="moveNo()">🙅‍♀️ Nahi 🙄</button>
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">🧡 Chalooo 😍</button>
+    <button id="no" onclick="moveNo()" ontouchstart="moveNo()">🙅‍♀️ Nahi 🙄</button>
+  </div>
 
   <script>
     function moveNo() {

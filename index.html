@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dosa Date</title>
+  <title>Dosa Date 😋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -15,10 +15,10 @@
       font-family: Arial, sans-serif;
       overflow: hidden;
 
-      /* REAL DOSA IMAGE */
+      /* YOUR UPLOADED IMAGE */
       background-image:
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("https://images.unsplash.com/photo-1633945274405-b6c8069047b0");
+        url("istockphoto-1306083166-612x612.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -37,6 +37,10 @@
     .buttons {
       position: relative;
       height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
     }
 
     button {
@@ -50,13 +54,12 @@
     #yes {
       background: #ff9800;
       color: #fff;
-      margin-right: 10px;
     }
 
     #no {
       background: #f0f0f0;
       position: absolute;
-      left: 160px; /* START POSITION */
+      left: 160px; /* starting position */
       top: 0;
     }
   </style>
@@ -78,10 +81,10 @@
   <script>
     function moveNo() {
       const noBtn = document.getElementById("no");
-      const parent = document.querySelector(".buttons");
+      const container = document.querySelector(".buttons");
 
-      const maxX = parent.offsetWidth - noBtn.offsetWidth;
-      const maxY = parent.offsetHeight - noBtn.offsetHeight;
+      const maxX = container.offsetWidth - noBtn.offsetWidth;
+      const maxY = container.offsetHeight - noBtn.offsetHeight;
 
       const x = Math.random() * maxX;
       const y = Math.random() * maxY;
@@ -92,7 +95,10 @@
 
     function yesClicked() {
       alert(
-        "😂💍 Shaadi kar lete hain!\n💸 Roz kahan paise kharch karenge?\n🏠 Sirf ek baar aata leke,\n🥞 Ghar pe bana ke kha lenge 😌❤️"
+        "😂💍 Shaadi kar lete hain!\n" +
+        "💸 Roz kahan paise kharch karenge?\n" +
+        "🏠 Sirf ek baar aata leke,\n" +
+        "🥞 Ghar pe bana ke kha lenge 😌❤️"
       );
     }
   </script>

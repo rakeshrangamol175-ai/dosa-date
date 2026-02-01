@@ -15,7 +15,6 @@
       font-family: Arial, sans-serif;
       overflow: hidden;
 
-      /* YOUR UPLOADED IMAGE */
       background-image:
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
         url("istockphoto-1306083166-612x612.jpg");
@@ -24,31 +23,33 @@
     }
 
     .card {
+      width: 100%;
+      max-width: 360px;
       text-align: center;
       color: #fff;
       padding: 20px;
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 24px;
       margin-bottom: 30px;
     }
 
     .buttons {
       position: relative;
-      height: 80px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 14px;
+      height: 70px;
     }
 
     button {
-      padding: 14px 28px;
-      font-size: 18px;
+      padding: 14px 22px;
+      font-size: 16px;
       border-radius: 14px;
       border: none;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     #yes {
@@ -59,8 +60,7 @@
     #no {
       background: #f0f0f0;
       position: absolute;
-      left: 160px; /* starting position */
-      top: 0;
+      right: 0;
     }
   </style>
 </head>
@@ -68,9 +68,7 @@
 <body>
 
   <div class="card">
-    <h1>
-      Chale kya dosa date pe? 😋✨
-    </h1>
+    <h1>Chale kya dosa date pe? 😋✨</h1>
 
     <div class="buttons">
       <button id="yes" onclick="yesClicked()">🧡 Chalooo 😍</button>
@@ -83,8 +81,8 @@
       const noBtn = document.getElementById("no");
       const container = document.querySelector(".buttons");
 
-      const maxX = container.offsetWidth - noBtn.offsetWidth;
-      const maxY = container.offsetHeight - noBtn.offsetHeight;
+      const maxX = container.clientWidth - noBtn.offsetWidth;
+      const maxY = container.clientHeight - noBtn.offsetHeight;
 
       const x = Math.random() * maxX;
       const y = Math.random() * maxY;
